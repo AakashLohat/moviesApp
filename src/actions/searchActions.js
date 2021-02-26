@@ -20,7 +20,7 @@ export const Delete = id => dispatch => {
 export const fetchMovies = text => dispatch => {
 
 
-    axios.get(`http://www.omdbapi.com/?apikey=${APIKey}&s=${text}`).then(response => dispatch({
+    axios.get(`https://www.omdbapi.com/?apikey=${APIKey}&s=${text}`).then(response => dispatch({
         type: FETCH_MOVIES,
         payload: response.data.Search
     })).catch(error => { console.log(error) })
@@ -28,7 +28,7 @@ export const fetchMovies = text => dispatch => {
 
 }
 export const FavMovies = id => dispatch => {
-    axios.get(`http://www.omdbapi.com/?apikey=${APIKey}&i=${id}`).then(response => dispatch({
+    axios.get(`https://www.omdbapi.com/?apikey=${APIKey}&i=${id}`).then(response => dispatch({
         type: FAV_MOVIES,
         payload: response.data
     })).catch(error => { console.log(error) })
